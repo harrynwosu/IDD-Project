@@ -5,7 +5,7 @@ import pandas as pd
 # Fetch the sitemap
 sitemap_url = "https://www.illinoislifespan.org/sitemap.xml"
 sitemap_response = requests.get(sitemap_url)
-sitemap_soup = BeautifulSoup(sitemap_response.text, 'xml')  # Use 'lxml' parser
+sitemap_soup = BeautifulSoup(sitemap_response.text, 'lxml')  # Use 'lxml' parser
 
 # Extract URLs from the sitemap
 urls = [loc.get_text() for loc in sitemap_soup.find_all('loc')]
